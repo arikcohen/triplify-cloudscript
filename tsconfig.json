@@ -3,8 +3,7 @@
     "compilerOptions": {
     "target": "es5",
     "module": "system",    
-    "sourceMap": true,    
-    "outFile": "completeJavascriptForPlayFab.js"
+    "sourceMap": true    
     },
     "exclude": ["sample-cloudScript"]
 }
