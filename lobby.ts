@@ -20,3 +20,8 @@ interface ICreateRoomInLobbyArgs {
 interface ICreateRoomInLobbyResponse {
     roomId: string;
 }
+
+handlers["createMutliPlayRoom"]  = function (args: object, context: IPlayFabContext): void {
+    log.debug("context",context);
+    
+}
