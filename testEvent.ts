@@ -11,14 +11,8 @@ handlers["sendTestEventPlayer"]  = function (args: any, context: IPlayFabContext
 
     if (context.currentEntity == null)
     {
-        //do accountInfo to look up title_player_account
-        var accountInfo = server.GetUserAccountInfo({PlayFabId:currentPlayerId});
-        log.info("currentPlayerId", currentPlayerId);
-        log.info("accountInfo", accountInfo);
-        //Get the Title Player Account
-        var titlePlayerAccount = accountInfo.UserInfo.TitleInfo.TitlePlayerAccount;
-        log.info("titlePlayerAccount", titlePlayerAccount);
-        entityEvent.Entity = {Id: titlePlayerAccount, Type: "title_player_account"};        
+        //do accountInfo to look up title_player_account        
+        entityEvent.Entity = server.GetUserAccountInfo({ PlayFabId: currentPlayerId }).UserInfo.TitleInfo.TitlePlayerAccount
     }
     else {
         entityEvent.Entity = {Id: context.currentEntity.Entity, Type: "title_player_account"};
