@@ -25,7 +25,8 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
     entityEvent.Entity = {Id: "58AC", Type: "title"};
     entityEvent.EventNamespace = "com.playfab.events.triplify";
     entityEvent.Name = "AllPlayGameStart";    
-    entity.WriteEvents({Events:[entityEvent]});
+    var eventResult = entity.WriteEvents({Events:[entityEvent]});
+    log.info("Write Events Result", eventResult);
     
     
 }
