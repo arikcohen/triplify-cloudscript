@@ -3,10 +3,7 @@ var server: any;
 
 handlers["sendTestEventPlayer"]  = function (args: any, context: IPlayFabContext): void {  
     
-    // write event
-    log.info("currentEntity", context.currentEntity);
-
-
+    
     var entityEvent:any = {};
     entityEvent.EventNamespace = "com.playfab.events.triplify";
     entityEvent.Name = "test_event_player";    
@@ -19,11 +16,12 @@ handlers["sendTestEventPlayer"]  = function (args: any, context: IPlayFabContext
   
         //Get the Title Player Account
         var titlePlayerAccount = accountInfo.UserInfo.TitleInfo.TitlePlayerAccount;
-        entityEvent.Entity = {Id: titlePlayerAccount, Type: "title_player_account"};
+        entityEvent.Entity = {Id: titlePlayerAccount, Type: "title_player_account"};        
     }
     else {
         entityEvent.Entity = {Id: context.currentEntity.Entity, Type: "title_player_account"};
     }
+    log.info("entity being written to", entityEvent.Entity);
         
     var eventResult = entity.WriteEvents({Events:[entityEvent]});
     log.info("Write Events Result", eventResult);
