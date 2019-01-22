@@ -7,6 +7,7 @@ handlers["sendTestEventPlayer"] = function (args, context) {
     if (context.currentEntity == null) {
         //do accountInfo to look up title_player_account
         var accountInfo = server.GetUserAccountInfo({ PlayFabId: currentPlayerId });
+        log.info("currentPlayerId", currentPlayerId);
         log.info("accountInfo", accountInfo);
         //Get the Title Player Account
         var titlePlayerAccount = accountInfo.UserInfo.TitleInfo.TitlePlayerAccount;
