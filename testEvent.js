@@ -1,8 +1,6 @@
 var entity;
 var server;
 handlers["sendTestEventPlayer"] = function (args, context) {
-    // write event
-    log.info("currentEntity", context.currentEntity);
     var entityEvent = {};
     entityEvent.EventNamespace = "com.playfab.events.triplify";
     entityEvent.Name = "test_event_player";
@@ -16,6 +14,7 @@ handlers["sendTestEventPlayer"] = function (args, context) {
     else {
         entityEvent.Entity = { Id: context.currentEntity.Entity, Type: "title_player_account" };
     }
+    log.info("entity being written to", entityEvent.Entity);
     var eventResult = entity.WriteEvents({ Events: [entityEvent] });
     log.info("Write Events Result", eventResult);
 };
