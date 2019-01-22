@@ -1,8 +1,9 @@
 var entity: any;
 
-handlers["sendTestEventPlayer"]  = function (args: string, context: IPlayFabContext): void {  
+handlers["sendTestEventPlayer"]  = function (args: any, context: IPlayFabContext): void {  
     
     // write event
+    log.info("currentEntity", context.currentEntity);
 
     var entityEvent:any = {};
     entityEvent.Entity = {Id: context.currentEntity.Entity, Type: "title_player_account"};
@@ -10,6 +11,6 @@ handlers["sendTestEventPlayer"]  = function (args: string, context: IPlayFabCont
     entityEvent.Name = "test_event_player";    
     var eventResult = entity.WriteEvents({Events:[entityEvent]});
     log.info("Write Events Result", eventResult);
-    log.info("currentEntity", context.currentEntity);
+    
     
 }
