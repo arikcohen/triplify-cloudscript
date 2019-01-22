@@ -32,6 +32,7 @@ interface IPlayFabHttp {
 interface IPlayFabContext {
     playStreamEvent: PlayStreamModels.IBasePlayStreamEvent;
     playerProfile: IPlayFabPlayerProfile;
+    currentEntity: any;
 }
 
 interface IPlayFabPlayerProfile {
