@@ -15,10 +15,9 @@ handlers["sendTestEventPlayer"]  = function (args: any, context: IPlayFabContext
         entityEvent.Entity = server.GetUserAccountInfo({ PlayFabId: currentPlayerId }).UserInfo.TitleInfo.TitlePlayerAccount
     }
     else {
-        entityEvent.Entity = {Id: context.currentEntity.Entity, Type: "title_player_account"};
+        entityEvent.Entity = context.currentEntity.Entity;
     }
-    log.info("entity being written to", entityEvent.Entity);
-    log.info("entityEvent", entityEvent);
+    
     var eventResult = entity.WriteEvents({Events:[entityEvent]});
     log.info("Write Events Result", eventResult);        
 }
