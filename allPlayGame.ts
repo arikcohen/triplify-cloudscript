@@ -4,7 +4,7 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
     let endTime = startTime;
     endTime.setMinutes(endTime.getMinutes() + 5);
     
-
+    let gameData = {"StartDateTime":startTime.toUTCString(),"EndDateTime":endTime.toUTCString(),"Seed":startTime.toUTCString(),"Difficulty":0} ;    
     
     entity.SetObjects({
         Entity: {
@@ -13,9 +13,7 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
         },
         Objects : [{ 
             ObjectName: "GameData",
-            DataObject:
-                {"StartDateTime":startTime.toUTCString(),"EndDateTime":endTime.toUTCString(),"Seed":startTime.toUTCString(),"Difficulty":0} 
-
+            DataObject: gameData
         }]    
     });
 
@@ -24,7 +22,8 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
     var entityEvent:any = {};
     entityEvent.Entity = {Id: "58AC", Type: "title"};
     entityEvent.EventNamespace = "com.playfab.events.triplify";
-    entityEvent.Name = "AllPlayGameStart";    
+    entityEvent.Name = "AllPlayGame";    
+    entityEvent.Payload = gameData;
     var eventResult = entity.WriteEvents({Events:[entityEvent]});
     log.info("Write Events Result", eventResult);
     
