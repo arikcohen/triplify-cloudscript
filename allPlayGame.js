@@ -2,7 +2,7 @@ handlers["StartAllPlayGame"] = function (args, context) {
     var startTime = new Date();
     var endTime = startTime;
     endTime.setMinutes(endTime.getMinutes() + 5);
-    var gameData = { "StartDateTime": startTime.toUTCString(), "EndDateTime": endTime.toUTCString(), "Seed": startTime.toUTCString(), "Difficulty": 0 };
+    var gameData = { "StartDateTimeString": startTime.toUTCString(), "EndDateTimeString": endTime.toUTCString(), "Seed": startTime.toUTCString(), "Difficulty": 0 };
     entity.SetObjects({
         Entity: {
             Id: "4D909557B5F68057",

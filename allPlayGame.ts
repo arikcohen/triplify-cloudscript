@@ -4,7 +4,7 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
     let endTime = startTime;
     endTime.setMinutes(endTime.getMinutes() + 5);
     
-    let gameData = {"StartDateTime":startTime.toUTCString(),"EndDateTime":endTime.toUTCString(),"Seed":startTime.toUTCString(),"Difficulty":0} ;    
+    let gameData = {"StartDateTimeString":startTime.toUTCString(),"EndDateTimeString":endTime.toUTCString(),"Seed":startTime.toUTCString(),"Difficulty":0} ;    
     
     entity.SetObjects({
         Entity: {
