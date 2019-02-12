@@ -30,8 +30,9 @@ handlers["ProcessAllPlayGameResults"] = function (args, context) {
             Type: "group"
         }
     });
+    log.info("test", allPlayGameObjects);
     var gameData = allPlayGameObjects.Result.Objects["GameData"];
-    log.info("processong game:" + gameData.Seed);
+    log.info("processing game:" + gameData.Seed);
     var entityEvent = {};
     entityEvent.Entity = { Id: "58AC", Type: "title" };
     entityEvent.EventNamespace = "com.playfab.events.triplify";
