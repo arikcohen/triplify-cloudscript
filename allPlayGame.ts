@@ -36,9 +36,9 @@ handlers["ProcessAllPlayGameResults"] = function (args: object, context:IPlayFab
             Type: "group"
         }
     });
-    log.info("test", allPlayGameObjects);
-    /*
-    var gameData = allPlayGameObjects.Result.Objects["GameData"];
+    log.info("test", allPlayGameObjects.data);
+    
+    var gameData = allPlayGameObjects.data.Objects["GameData"];
     log.info("processing game:" + gameData.Seed);
 
     var entityEvent:any = {};
@@ -47,5 +47,5 @@ handlers["ProcessAllPlayGameResults"] = function (args: object, context:IPlayFab
     entityEvent.Name = "AllPlayGameResults";    
     entityEvent.Payload = null;
     var eventResult = entity.WriteEvents({Events:[entityEvent]});    
-    */
+    
 }
