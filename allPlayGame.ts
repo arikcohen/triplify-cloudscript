@@ -36,9 +36,9 @@ handlers["ProcessAllPlayGameResults"] = function (args: object, context:IPlayFab
             Type: "group"
         }
     });
-    log.info("test", allPlayGameObjects.data);
+    log.info("test", allPlayGameObjects.Objects["GameData"]);
     
-    var gameData = allPlayGameObjects.data.Objects["GameData"];
+    var gameData = allPlayGameObjects.Objects["GameData"];
     log.info("processing game:" + gameData.Seed);
 
     var entityEvent:any = {};

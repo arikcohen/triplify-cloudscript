@@ -30,8 +30,8 @@ handlers["ProcessAllPlayGameResults"] = function (args, context) {
             Type: "group"
         }
     });
-    log.info("test", allPlayGameObjects.data);
-    var gameData = allPlayGameObjects.data.Objects["GameData"];
+    log.info("test", allPlayGameObjects.Objects["GameData"]);
+    var gameData = allPlayGameObjects.Objects["GameData"];
     log.info("processing game:" + gameData.Seed);
     var entityEvent = {};
     entityEvent.Entity = { Id: "58AC", Type: "title" };
