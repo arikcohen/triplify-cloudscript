@@ -28,7 +28,13 @@ var checkGroup = function (currentEntity, groupId) {
 };
 var addToGroup = function (currentEntity, groupId) {
     var response = entity.AddMembers({
-        Members: [{ currentEntity: currentEntity }],
+        Members: [
+            {
+                Id: currentEntity.Id,
+                Type: currentEntity.Type,
+                TypeString: currentEntity.TypeString
+            }
+        ],
         Group: { Id: groupId }
     });
     log.info("AddMembers response: ", response);

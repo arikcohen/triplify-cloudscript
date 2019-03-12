@@ -40,7 +40,13 @@ var checkGroup = function (currentEntity:any, groupId:string) : boolean
 var addToGroup = function (currentEntity:any, groupId:string) : void
 {
     var response = entity.AddMembers( {
-        Members: [ { currentEntity }],
+        Members: [ 
+            { 
+                Id:currentEntity.Id,
+                Type:currentEntity.Type,
+                TypeString:currentEntity.TypeString
+           }
+        ],
         Group: { Id: groupId}
     });    
 
