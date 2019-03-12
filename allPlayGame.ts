@@ -7,9 +7,13 @@ handlers["StartAllPlayGame"]  = function (args: object, context: IPlayFabContext
     
     let gameData = {"StartDateTimeString":startTime.toUTCString(),"EndDateTimeString":endTime.toUTCString(),"Seed":startTime.toUTCString(),"Difficulty":0} ;    
     
+    var titleRequest: PlayFabServerModels.GetTitleDataRequest = { Keys: ["SolitaireGroup", "AllPlayGroup"] };
+    var titleResponse = server.GetTitleData(titleRequest);
+    
+
     entity.SetObjects({
         Entity: {
-            Id: "4D909557B5F68057",
+            Id: titleResponse.Data["AllPlayGroup"],
             Type: "group"
         },
         Objects : [{ 

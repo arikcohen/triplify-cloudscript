@@ -4,9 +4,11 @@ handlers["StartAllPlayGame"] = function (args, context) {
     startTime.setMinutes(startTime.getMinutes() + 2);
     endTime.setMinutes(startTime.getMinutes() + 5);
     var gameData = { "StartDateTimeString": startTime.toUTCString(), "EndDateTimeString": endTime.toUTCString(), "Seed": startTime.toUTCString(), "Difficulty": 0 };
+    var titleRequest = { Keys: ["SolitaireGroup", "AllPlayGroup"] };
+    var titleResponse = server.GetTitleData(titleRequest);
     entity.SetObjects({
         Entity: {
-            Id: "4D909557B5F68057",
+            Id: titleResponse.Data["AllPlayGroup"],
             Type: "group"
         },
         Objects: [{
