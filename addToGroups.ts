@@ -15,14 +15,14 @@ handlers["addToGroups"]  = function (args: ICreateRoomInLobbyArgs, context: IPla
         currentEntity = context.currentEntity.Entity;
     }
 
-    if (checkGroup(currentEntity, titleResponse.data["SolitaireGroup"]) == false) 
+    if (checkGroup(currentEntity, titleResponse.Data["SolitaireGroup"]) == false) 
     {
-        addToGroup(currentEntity, titleResponse.data["SolitaireGroup"]);
+        addToGroup(currentEntity, titleResponse.Data["SolitaireGroup"]);
     }
 
-    if (checkGroup(currentEntity, titleResponse.data["AllPlayGroup"]) == false) 
+    if (checkGroup(currentEntity, titleResponse.Data["AllPlayGroup"]) == false) 
     {
-        addToGroup(currentEntity, titleResponse.data["AllPlayGroup"]);
+        addToGroup(currentEntity, titleResponse.Data["AllPlayGroup"]);
     }
 
 }

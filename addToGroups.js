@@ -11,11 +11,11 @@ handlers["addToGroups"] = function (args, context) {
     else {
         currentEntity = context.currentEntity.Entity;
     }
-    if (checkGroup(currentEntity, titleResponse.data["SolitaireGroup"]) == false) {
-        addToGroup(currentEntity, titleResponse.data["SolitaireGroup"]);
+    if (checkGroup(currentEntity, titleResponse.Data["SolitaireGroup"]) == false) {
+        addToGroup(currentEntity, titleResponse.Data["SolitaireGroup"]);
     }
-    if (checkGroup(currentEntity, titleResponse.data["AllPlayGroup"]) == false) {
-        addToGroup(currentEntity, titleResponse.data["AllPlayGroup"]);
+    if (checkGroup(currentEntity, titleResponse.Data["AllPlayGroup"]) == false) {
+        addToGroup(currentEntity, titleResponse.Data["AllPlayGroup"]);
     }
 };
 var checkGroup = function (currentEntity, groupId) {
