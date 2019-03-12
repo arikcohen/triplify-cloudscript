@@ -24,7 +24,7 @@ var checkGroup = function (currentEntity, groupId) {
         Group: { Id: groupId }
     });
     log.info("IsMember response: ", response);
-    return response.data.IsMember;
+    return response.IsMember;
 };
 var addToGroup = function (currentEntity, groupId) {
     var response = entity.addMembers({

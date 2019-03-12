@@ -34,7 +34,7 @@ var checkGroup = function (currentEntity:any, groupId:string) : boolean
         Group: { Id: groupId}
     });
     log.info("IsMember response: ", response);
-    return response.data.IsMember;
+    return response.IsMember;
 }
 
 var addToGroup = function (currentEntity:any, groupId:string) : void
