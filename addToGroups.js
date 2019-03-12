@@ -27,10 +27,10 @@ var checkGroup = function (currentEntity, groupId) {
     return response.IsMember;
 };
 var addToGroup = function (currentEntity, groupId) {
-    var response = entity.addMembers({
+    var response = entity.AddMembers({
         Members: [{ currentEntity: currentEntity }],
         Group: { Id: groupId }
     });
-    log.info("addMembers response: ", response);
+    log.info("AddMembers response: ", response);
 };
 //# sourceMappingURL=addToGroups.js.map

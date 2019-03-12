@@ -39,11 +39,11 @@ var checkGroup = function (currentEntity:any, groupId:string) : boolean
 
 var addToGroup = function (currentEntity:any, groupId:string) : void
 {
-    var response = entity.addMembers( {
+    var response = entity.AddMembers( {
         Members: [ { currentEntity }],
         Group: { Id: groupId}
     });    
 
-    log.info("addMembers response: ", response);
+    log.info("AddMembers response: ", response);
 }
     
