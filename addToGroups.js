@@ -23,6 +23,7 @@ var checkGroup = function (currentEntity, groupId) {
         Entity: currentEntity,
         Group: { Id: groupId }
     });
+    log.info("IsMember response: ", response);
     return response.data.IsMember;
 };
 var addToGroup = function (currentEntity, groupId) {
@@ -30,5 +31,6 @@ var addToGroup = function (currentEntity, groupId) {
         Members: [{ currentEntity: currentEntity }],
         Group: { Id: groupId }
     });
+    log.info("addMembers response: ", response);
 };
 //# sourceMappingURL=addToGroups.js.map
